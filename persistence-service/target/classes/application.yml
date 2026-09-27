@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: persistence-service
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/wallet_db
+    username: postgres
+    password: postgres # Ajusta si tu contraseña local es diferente
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    org.springframework.r2dbc: DEBUG

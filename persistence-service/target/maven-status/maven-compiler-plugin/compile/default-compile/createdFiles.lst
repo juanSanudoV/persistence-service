@@ -1,0 +1,4 @@
+com\digitalwallet\persistence\PersistenceServiceApplication.class
+com\digitalwallet\persistence\controller\ProductPersistenceController.class
+com\digitalwallet\persistence\entity\Product.class
+com\digitalwallet\persistence\repository\ProductRepository.class

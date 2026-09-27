@@ -1,0 +1,17 @@
+digital-wallet-refunds:
+    build:
+      context: ./digital-wallet-refunds/digital-wallet-refunds
+      dockerfile: Dockerfile
+    container_name: digital-wallet-refunds
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_R2DBC_URL=r2dbc:postgresql://postgres-db:5432/digital_wallet
+      - SPRING_R2DBC_USERNAME=postgres
+      - SPRING_R2DBC_PASSWORD=postgres
+      - PERSISTENCE_SERVICE_URL=http://persistence-service:8081
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+      persistence-service:
+        condition: service_started
